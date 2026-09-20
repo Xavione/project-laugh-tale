@@ -10,6 +10,9 @@
 - Proxmox installation notes
 - ThousandSunny cluster build
 - Sanji quorum/Corosync/pmxcfs recovery case study
+- Zoro Gi1/0/3 network-path troubleshooting case study
+- Cisco USB-console/driver detour and serial-console recovery
+- Cisco IOS management, VTY/SSH configuration, and legacy OpenSSH compatibility analysis
 - Node join, node removal, and quorum runbooks
 
 ### Current platform state
