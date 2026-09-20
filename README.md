@@ -58,6 +58,22 @@ All three nodes currently share the same Layer 2 LAN and communicate through the
 - Documented operational procedures as reusable runbooks.
 - Preserved the environment as a platform for Kubernetes, observability, automation, and local AI work.
 
+## Troubleshooting is part of the project
+
+The repository intentionally documents the ugly parts of the build, not just the final green dashboards. Three incidents have already become engineering case studies:
+
+| Incident | What failed | What I practiced |
+|---|---|---|
+| **Zoro network path** | Zoro could not reach the gateway on Gi1/0/3 | Fault-domain isolation, Linux bridge/routing checks, Cisco interface state, MAC learning, ICMP validation |
+| **Cisco console + SSH bootstrap** | USB-console path failed and modern OpenSSH rejected the switch's legacy algorithms | Serial management, Windows device enumeration, IOS modes, VTY configuration, SSH cryptographic negotiation |
+| **Sanji cluster recovery** | Cluster membership cleanup exposed quorum, CFS locking, stale Corosync state, and authentication remnants | Quorum recovery, `pvecm`, `pmxcfs`, Corosync, systemd, distributed-state cleanup |
+
+These are documented as evidence-driven incident reports. Where a root cause was not proven, I say so rather than retrofitting certainty after the system starts working.
+
+- [Zoro Network Path Incident](docs/09-zoro-network-incident.md)
+- [Cisco Console & SSH Bootstrap](docs/10-cisco-console-ssh-bootstrap.md)
+- [Sanji / Proxmox Cluster Recovery](docs/07-cluster-recovery-case-study.md)
+
 ## Engineering case study: cluster membership recovery
 
 The most valuable part of the build so far was not the happy path.
@@ -102,6 +118,8 @@ Rather than reinstalling the host, I diagnosed and recovered the cluster state. 
 | [Cluster Build](docs/06-cluster-build.md) | ThousandSunny creation and node membership |
 | [Recovery Case Study](docs/07-cluster-recovery-case-study.md) | Quorum/CFS/Corosync troubleshooting |
 | [Lessons Learned](docs/08-lessons-learned.md) | Engineering takeaways |
+| [Zoro Network Incident](docs/09-zoro-network-incident.md) | Layered fault isolation from Proxmox through the Cisco switch |
+| [Cisco Console & SSH Bootstrap](docs/10-cisco-console-ssh-bootstrap.md) | USB-console failure, serial recovery, IOS management, and SSH compatibility |
 | [Node Join Runbook](runbooks/proxmox-node-join.md) | Repeatable node-add procedure |
 | [Node Removal Runbook](runbooks/proxmox-node-removal.md) | Controlled removal procedure |
 | [Quorum Recovery](runbooks/quorum-recovery.md) | Lab-specific quorum recovery notes |
