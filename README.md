@@ -50,7 +50,7 @@ All three nodes currently share the same Layer 2 LAN and communicate through the
 
 - Installed Proxmox VE 9.x on three physical mini PCs.
 - Designed a predictable static addressing scheme aligned with physical switch ports.
-- Configured a Cisco Catalyst 2960X for management access over SSH.
+- Integrated a **$20 used Cisco Catalyst 2960X-24PS-L** with inherited configuration, inspected its existing state, established a known management baseline, and configured SSH access.
 - Validated Layer 1 through Layer 3 connectivity using interface state, MAC learning, and ICMP.
 - Created the **ThousandSunny** Proxmox cluster.
 - Worked directly with Proxmox quorum, Corosync membership, `pmxcfs`, and cluster configuration.
@@ -65,7 +65,7 @@ The repository intentionally documents the ugly parts of the build, not just the
 | Incident | What failed | What I practiced |
 |---|---|---|
 | **Zoro network path** | Zoro could not reach the gateway on Gi1/0/3 | Fault-domain isolation, Linux bridge/routing checks, Cisco interface state, MAC learning, ICMP validation |
-| **Cisco console + SSH bootstrap** | USB-console path failed and modern OpenSSH rejected the switch's legacy algorithms | Serial management, Windows device enumeration, IOS modes, VTY configuration, SSH cryptographic negotiation |
+| **$20 used Cisco switch** | Catalyst arrived from a local used-computer store with inherited configuration; USB-console path then failed and modern OpenSSH rejected its legacy algorithms | Inherited-infrastructure discovery, configuration inspection, serial management, IOS modes, VTY/SSH, cryptographic interoperability |
 | **Sanji cluster recovery** | Cluster membership cleanup exposed quorum, CFS locking, stale Corosync state, and authentication remnants | Quorum recovery, `pvecm`, `pmxcfs`, Corosync, systemd, distributed-state cleanup |
 
 These are documented as evidence-driven incident reports. Where a root cause was not proven, I say so rather than retrofitting certainty after the system starts working.
