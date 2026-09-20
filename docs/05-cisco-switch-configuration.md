@@ -6,7 +6,7 @@ The Cisco Catalyst was not purchased new or factory-reset. I found a **used Cata
 
 That changed the task from "configure a blank switch" to something closer to inheriting infrastructure from another environment: **discover what was already configured, regain administrative access, determine whether the existing state was safe/useful, and then establish a known management baseline without blindly erasing evidence.**
 
-The switch already had configuration on it, including the hostname `LaughTale`, a local privileged user entry, and existing interface/configuration state. I therefore treated the device as **unknown inherited infrastructure**, not as a clean appliance.
+The switch already had configuration on it, including the hostname, a local privileged user entry, and existing interface/configuration state. I therefore treated the device as **unknown inherited infrastructure**, not as a clean appliance.
 
 The goal became:
 
