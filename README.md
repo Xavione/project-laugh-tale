@@ -116,6 +116,7 @@ Rather than reinstalling the host, I diagnosed and recovered the cluster state. 
 | [Proxmox Installation](docs/04-proxmox-installation.md) | Hypervisor deployment process |
 | [Cisco Configuration](docs/05-cisco-switch-configuration.md) | Switch management and remote access |
 | [Cluster Build](docs/06-cluster-build.md) | ThousandSunny creation and node membership |
+| [Kubernetes VM Topology](docs/11-kubernetes-vm-topology.md) | Proposed six-VM placement, capacity, network, and quorum decision |
 | [Recovery Case Study](docs/07-cluster-recovery-case-study.md) | Quorum/CFS/Corosync troubleshooting |
 | [Lessons Learned](docs/08-lessons-learned.md) | Engineering takeaways |
 | [Zoro Network Incident](docs/09-zoro-network-incident.md) | Layered fault isolation from Proxmox through the Cisco switch |
@@ -139,7 +140,7 @@ Rather than reinstalling the host, I diagnosed and recovered the cluster state. 
 - [x] Proxmox deployment
 - [x] Three-node Proxmox cluster
 - [x] Cluster recovery/runbook documentation
-- [ ] Kubernetes virtual-machine topology
+- [x] Kubernetes virtual-machine topology ([proposed design](docs/11-kubernetes-vm-topology.md); VMs not deployed)
 - [ ] Kubernetes cluster deployment
 - [ ] Infrastructure automation
 - [ ] Prometheus + Grafana observability
